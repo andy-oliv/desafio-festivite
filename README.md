@@ -20,5 +20,5 @@
 <p float="left">
   <img align="top" width="300px" src="./public/images/desktop.png">
   <img align="top" width="300px" src="./public/images/tablet.png">
-  <img width="300px" src="./public/images/mobile.png">
+  <img width="200px" src="./public/images/mobile.png">
 </p>

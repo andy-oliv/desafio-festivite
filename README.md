@@ -17,6 +17,8 @@
 
 <p><em>Versões desktop, tablet e mobile</em></p>
 
-<img align="top" width="300px" src="./public/images/desktop.png">
-<img align="top" width="300px" src="./public/images/tablet.png">
-<img width="300px" src="./public/images/mobile.png">
+<p float="left">
+  <img align="top" width="300px" src="./public/images/desktop.png">
+  <img align="top" width="300px" src="./public/images/tablet.png">
+  <img width="300px" src="./public/images/mobile.png">
+</p>

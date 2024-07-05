@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./public/styles/CSS/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festivite</title>
+</head>
+<body>
+    <aside>
+        <figure class="logo-wrapper">
+            <img class="logo-background" src="./public/images/Background.png">
+        </figure>
+        <div class="logo-container">
+            <img class="decoration" src="./public/images/Logo.svg">
+            <h1 class="companyName">Festivite</h1>
+            <p class="slogan">Crie um convite digital para o seu evento</p>
+        </div>
+    </aside>
+    <form>
+        <h2 class="form-title">Crie seu convite</h2>
+        <section class="about">
+            <div class="section">
+                <i class='icon bx bx-calendar-alt'></i>
+                <h3 class="section-title">Sobre o evento</h3>
+            </div>
+            <div class="input-container required">
+                <label for="text">Título</label>
+                <input class="generalInput requiredInput" type="text" id="text" name="text" placeholder="Nome do evento">
+            </div>
+            <div class="input-grid">
+                <div class="input-container">
+                    <label for="startDate">Início</label>
+                    <input class="generalInput" type="datetime-local" id="startDate" name="startDate">
+                </div>
+                <div class="input-container">
+                    <label for="endDate">Fim</label>
+                    <input class="generalInput" type="datetime-local" id="endDate" name="endDate">
+                </div>
+                <div class="input-container">
+                    <label id="label">Tipo</label>
+                    <div class="type-container">
+                        <label for="eventType" class="checkbox-label">
+                            <i class='checkbox-icon bx bx-buildings' ></i>
+                            <p class="checkbox-option">Presencial</p>
+                        </label>
+                        <div id="selection"></div>
+                        <input type="checkbox" id="eventType" name="eventType">
+                        <label for="eventType" class="checkbox-label">
+                            <i class='checkbox-icon bx bx-video' ></i>
+                            <p class="checkbox-option">Online</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-container required">
+                    <label for="address">Local</label>
+                    <input class="generalInput requiredInput" type="text" id="address" name="address" placeholder="Link ou endereço">
+                </div>
+            </div>
+            <div id="textarea-container" class="input-container required">
+                <label for="details">Descrição</label>
+                <textarea class="generalInput requiredInput" cols="10" rows="10" id="details" name="details" placeholder="Escreva sobre os detalhes do evento"></textarea>
+            </div>
+        </section>
+        <section class="customization">
+            <div class="section">
+                <i class='icon bx bx-brush'></i>
+                <h3 class="section-title">Personalização</h3>
+            </div>
+            <div class="input-container">
+                <label class="inputLabel">Cor principal</label>
+                <div class="color-grid">
+                    <div class="radio-container">
+                        <p id="circle1" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="brand-light" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle2" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="navy" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle3" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="purple" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle4" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="fuschia" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle5" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="pink" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle6" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="error" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle7" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="orange" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle8" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="yellow" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle9" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="lime" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle10" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="green" name="eventColor">
+                    </div>
+                    <div class="radio-container">
+                        <p id="circle11" class="color"></p>
+                        <input class="customizeRadio" type="radio" id="cyan" name="eventColor">
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <label class="inputLabel">Tema do evento</label>
+                <div class="theme-grid">
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/birthday.jpg">
+                        </figure>
+                        <p class="theme-name">Aniversário</p>
+                        <input class="themeRadio" type="radio" id="birthday" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/children.jpg">
+                        </figure>
+                        <p class="theme-name">Infantil</p>
+                        <input class="themeRadio" type="radio" id="children" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/graduation.jpg">
+                        </figure>
+                        <p class="theme-name">Formatura</p>
+                        <input class="themeRadio" type="radio" id="graduationParty" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/wedding.jpg">
+                        </figure>
+                        <p class="theme-name">Casamento</p>
+                        <input class="themeRadio" type="radio" id="wedding" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/baby shower.jpg">
+                        </figure>
+                        <p class="theme-name">Chá de bebê</p>
+                        <input class="themeRadio" type="radio" id="babyShower" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/house warming.jpg">
+                        </figure>
+                        <p class="theme-name">Chá de panela</p>
+                        <input class="themeRadio" type="radio" id="HouseWarming" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/carnival.jpg">
+                        </figure>
+                        <p class="theme-name">Carnaval</p>
+                        <input class="themeRadio" type="radio" id="carnival" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/easter.jpg">
+                        </figure>
+                        <p class="theme-name">Páscoa</p>
+                        <input class="themeRadio" type="radio" id="easter" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/festa junina.jpg">
+                        </figure>
+                        <p class="theme-name">São João</p>
+                        <input class="themeRadio" type="radio" id="stJohn" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/halloween.jpg">
+                        </figure>
+                        <p class="theme-name">Halloween</p>
+                        <input class="themeRadio" type="radio" id="halloween" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/christmas.jpg">
+                        </figure>
+                        <p class="theme-name">Natal</p>
+                        <input class="themeRadio" type="radio" id="christmas" name="theme">
+                    </div>
+                    <div class="theme-container">
+                        <figure class="themeImg-container">
+                            <img class="themeImg" src="./public/images/other.jpg">
+                        </figure>
+                        <p class="theme-name">Outro</p>
+                        <input class="themeRadio" type="radio" id="other" name="theme">
+                    </div>
+                </div>
+            </div>
+            <div class="file-grid">
+                <div class="input-container">
+                    <label class="inputLabel">Estilo</label>
+                    <div class="style-container">
+                        <label for="screenMode" class="mode-checkbox">
+                            <i id="sun" class='mode-icon bx bxs-sun' ></i>
+                            <p class=".animateModeBackwards" id="circle"></p>
+                            <input type="checkbox" id="screenMode" name="screenMode">
+                            <i class='mode-icon bx bxs-moon' ></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label class="inputLabel">Foto de capa</label>
+                    <div class="file-container">
+                        <div class="upload-container">
+                            <i class='bx bx-upload' ></i>
+                            <label for="photo">Selecione</label>
+                        </div>
+                        <input type="file" id="imageUpload" name="imageUpload" accept="image/png, image/jpeg">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="info">
+            <div class="section">
+                <i class='icon bx bx-user-pin'></i>
+                <h3 class="section-title">Dados para contato</h3>
+            </div>
+            <div class="input-container required">
+                <label for="clientName">Nome</label>
+                <input class="generalInput requiredInput" type="text" id="clientName" name="clientName" placeholder="Nome completo">
+            </div>
+            <div class="info-grid">
+                <div class="input-container required">
+                    <label for="email">E-mail</label>
+                    <input class="generalInput requiredInput" type="email" id="email" name="email" placeholder="exemplo@email.com">
+                </div>
+                <div class="input-container required">
+                    <label for="telephone">Telefone</label>
+                    <input class="generalInput requiredInput" type="tel" id="telephone" name="telephone" placeholder="(99) 99999-9999" pattern="([0-9]{2}) 9[0-9]{4}-[0-9]{4}">
+                </div>
+            </div>
+        </section>
+        <hr>
+        <div class="conclusion required">
+            <input class="userConsentInput requiredInput" type="checkbox" name="privacy" id="privacy">
+            <i id="mobileMark" class='bx bx-check'></i>
+            <span class="checkmark"></span>
+            <label for="privacy">Li e concordo com os <span>Termos e Condições</span> e com a <span>Política de Privacidade</span></label>
+        </div>
+        <div class="conclusion">
+            <input class="userConsentInput" type="checkbox" name="emailUpdate" id="emailUpdate">
+            <i class='bx bx-check'></i>
+            <span class="checkmark"></span>
+            <label for="emailUpdate">Aceito receber atualizações e promoções por e-mail</span></label>
+        </div>
+        <div class="conclusion">
+            <input class="userConsentInput" type="checkbox" name="smsUpdate" id="smsUpdate">
+            <i class='bx bx-check'></i>
+            <span class="checkmark"></span>
+            <label for="smsUpdate">Aceito receber atualizações e promoções por SMS</span></label>
+        </div>
+        <div class="button">
+            <div class="button-wrapper">
+                <i class='button-icon bx bxs-coupon' ></i>
+                <p class="button-text">Gerar convite</p>
+            </div>
+        </div>
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>

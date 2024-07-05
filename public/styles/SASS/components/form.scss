@@ -1,0 +1,454 @@
+@use "../abstract/colors.scss";
+@use "../abstract/fonts.scss";
+
+form{
+    margin-left: 29%; 
+    background-color: colors.$shape-body; 
+    border-radius: 1em;
+    padding: 5% 10% 5% 10%; 
+}
+
+.alert::after{
+    content: "campo obrigatório";
+    color: colors.$error;
+    font-family: fonts.$openSans;
+    font-size: 0.8rem;
+}
+
+.form-title{
+    font-family: fonts.$baloo;
+    color: colors.$text-heading;
+    margin-bottom: 2em;
+}
+
+.section{
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1em;
+    .icon{
+        font-size: 1.5rem;
+        color: colors.$input-placeholder;
+    }
+    
+    .section-title{
+        font-family: fonts.$baloo;
+        color: colors.$text-heading;
+        margin-bottom: 1.5em;
+    }
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    margin-bottom: 1em;
+
+    label{
+        color: colors.$text-body;
+        font-family: fonts.$openSans;
+    }
+
+    .generalInput{
+        background-color: colors.$input-base;
+        border: 1px solid colors.$input-stroke;
+        font-family: fonts.$openSans;
+        font-size: 1.3rem;
+        font-weight: 300;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        outline-color: colors.$brand-light;
+        color: colors.$text-heading;
+        margin-top: 0.5em;
+    }
+
+    .generalInput::placeholder{
+        color: colors.$input-placeholder;
+    }
+}
+
+#label{
+    margin-bottom: 0.7em;
+}
+
+.type-container{
+    background-color: colors.$input-base;
+    padding: 0.6em;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid colors.$input-stroke;
+    border-radius: 0.5em;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .checkbox-label{
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1.3rem;
+        padding: 0 0.3em;
+    }
+
+    #selection{
+        background-color: colors.$input-stroke;
+        width: 50%;
+        height: 85%;
+        bottom: 0.25em;
+        left: 0.3em;
+        transition: all 1.5s ease-in-out;
+        transform: translateX(0);
+        border-radius: 0.3em;
+        position: absolute;
+        opacity: 0.9;
+    }
+
+    .checkbox-icon{
+        color: colors.$brand-light;
+    }
+
+    .animateForwards{
+        animation: selection-forwards 0.6s ease-in-out forwards;
+    }
+
+    .animateBackwards{
+        animation: selection-backwards 0.6s ease-in-out forwards;
+    }
+
+    input{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0.1em;
+        opacity: 0;
+    }
+}
+
+#textarea-container{
+    margin-bottom: 4em;
+}
+
+.input-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+}
+
+.inputLabel{
+    margin-bottom: 1em;
+}
+
+.color-grid{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    margin-bottom: 2em;
+
+    .radio-container{
+        position: relative;
+        height: 3em;
+        width: 3em;
+
+        .color{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            border: 10px solid colors.$shape-button;
+        }
+
+        .customizeRadio{
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+
+        #circle1{
+            background-color: colors.$brand-light;
+        }
+
+        #circle2{
+            background-color: #6A59FF;
+        }
+
+        #circle3{
+            background-color: #B259FF;
+        }
+
+        #circle4{
+            background-color: #FF59F9;
+        }
+
+        #circle5{
+            background-color: #FF598B;
+        }
+
+        #circle6{
+            background-color: colors.$error;
+        }
+
+        #circle7{
+            background-color: #FF8B59;
+        }
+
+        #circle8{
+            background-color: #FFCD59;
+        }
+
+        #circle9{
+            background-color: #E1FF59;
+        }
+
+        #circle10{
+            background-color: #59FF91;
+        }
+
+        #circle11{
+            background-color: #59FFF9;
+        }
+    }
+}
+
+.outline{
+    outline: 2px solid colors.$brand-light;
+}
+
+.theme-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+    margin-bottom: 3em;
+    gap: 1em;
+
+    .theme-container{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        position: relative;
+        background-color: colors.$shape-button;
+        border: 1px solid colors.$input-stroke;
+        padding: 0.3em;
+        border-radius: 0.5em;
+
+        .theme-name{
+            text-align: center;
+            font-family: fonts.$openSans;
+            color: colors.$text-heading;
+        }
+        
+        .themeImg-container{
+            width: 100%;
+            height: 100%;
+
+            .themeImg{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.5em;
+            }
+        }
+
+        .themeRadio{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0;
+        }
+    }
+}
+
+.file-grid{
+    display: flex;
+    align-items: center;
+    gap: 25%;
+    margin-bottom: 3em;
+}
+
+.mode-checkbox{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    background-color: colors.$input-base;
+    padding: 0.3em 0.5em;
+    border-radius: 1em;
+    position: relative;
+
+    .mode-icon{
+        color: colors.$brand-light;
+    }
+
+    #circle{
+        background-color: colors.$input-placeholder;
+        width: 1.5em;
+        height: 1.6em;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .animateMode{
+        animation: screenModeAnimation-forwards 0.5s ease-in-out forwards;
+    }
+    
+    .animateModeBackwards{
+        animation: screenModeAnimation-backwards 0.5s ease-in-out forwards;
+    }
+
+    #screenMode{
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+    }
+}
+
+.file-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .upload-container{
+        font-size: 1.3rem;
+
+        .bx-upload{
+            color: colors.$brand-light;
+        }
+    }
+
+    #imageUpload{
+        color: colors.$text-body;
+        opacity: 0;
+        position: absolute;
+        bottom: 0em;
+        width: 100%;
+    }
+}
+
+
+
+.info{
+    margin-bottom: 4em;
+}
+
+hr{
+    opacity: 0.1;
+    margin-bottom: 4em;
+}
+
+.conclusion{
+    position: relative;
+    display: flex;
+    gap: 1em;
+    margin-bottom: 0.5em;
+
+    .userConsentInput{
+        cursor: pointer;
+        position: absolute;
+        bottom: 0.3em;
+        width: 4%;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    .userConsentInput:checked ~ .checkmark{
+        border-color: colors.$brand-light;
+    }
+
+    .userConsentInput:checked ~ .bx-check{
+        opacity: 1;
+    }
+
+    .bx-check{
+        position: absolute;
+        font-size: 1.5rem;
+        bottom: 0.1px;
+        left: 2px;
+        color: colors.$brand-light;
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    .checkmark{
+        background-color: colors.$input-base;
+        border: 1px solid colors.$input-stroke;
+        width: 4%;
+        border-radius: 0.2em;
+    }
+
+    label{
+        color: colors.$text-heading;
+        font-family: fonts.$openSans;
+    }
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 3em;
+
+    .button-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 1.5rem;
+        color: colors.$text-heading;
+        font-family: fonts.$openSans;
+        background-color: colors.$brand-dark;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        cursor: pointer;
+    }
+    
+    .button-wrapper:hover{
+        filter: brightness(110%);
+    }
+}
+
+
+@keyframes screenModeAnimation-forwards{
+    from{
+        transform: translateX(0);
+    }
+    
+    to{
+        transform: translateX(1.5em);
+    }
+}
+
+@keyframes screenModeAnimation-backwards{
+    from{
+        transform: translateX(1.5em);
+    }
+    
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes selection-forwards{
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(95%);
+    }
+}
+
+@keyframes selection-backwards{
+    from{
+        transform: translateX(95%);
+    }
+
+    to{
+        transform: translateX(0);
+    }
+}
